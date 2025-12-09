@@ -1,4 +1,32 @@
 package minhasmusicas;
 
-public class Podcast {
+public class Podcast extends Audio {
+    private String apresentador;
+    private String descricao;
+
+    public String getApresentador() {
+        return apresentador;
+    }
+
+    public void setApresentador(String apresentador) {
+        this.apresentador = apresentador;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    // Pego o metodo getClassificacao na classe Audio, e o modifico, e para isso uso o Override
+
+    @Override
+    public double getClassificacao() {
+        if(this.getTotalCurtidas() > 500){
+            return 10;
+        } else {
+            return 8; }
+    }
 }
